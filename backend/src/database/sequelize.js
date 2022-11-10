@@ -2,7 +2,7 @@ const { Sequelize } = require('sequelize');
 const dotenv = require("dotenv");
 dotenv.config();
 
-const db = new sequelize(
+const db = new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USER,
   process.env.DB_PASSWORD,
@@ -19,16 +19,16 @@ const initDb = async () => {
     await db.sync({ force: true });
     console.log(`${process.env.DB_NAME} database synced`);
 
-    users.map(async (u) => {
-      await userModel.create({
-        nom: u.nom,
-        prenom: u.prenom,
-        naissance: u.naissance,
-        email: u.email,
-        password: u.password,
-        telephone: u.telephone,
-      });
-    });
+    // users.map(async (u) => {
+    //   await userModel.create({
+    //     nom: u.nom,
+    //     prenom: u.prenom,
+    //     naissance: u.naissance,
+    //     email: u.email,
+    //     password: u.password,
+    //     telephone: u.telephone,
+    //   });
+    // });
 
     // pokemons.map(async (pokemon) => {
     //   await pokemonModel.create({
@@ -39,9 +39,8 @@ const initDb = async () => {
     //     types: pokemon.types.join(),
     //   });
     // });
-    
   } catch (error) {
-    console.error(` Error: ${error}`);
+    console.error(` Erreur: ${error}`);
   }
 };
 

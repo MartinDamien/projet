@@ -14,8 +14,8 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "sequelize": "^6.25.4",
-    "serve-favicon": "^2.5.0",
-    "sqlite3": "^5.1.2"
+    "mariadb": "^3.0.1",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "morgan": "^1.10.0",

@@ -2,7 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const favicon = require("serve-favicon");
 const bodyParser = require("body-parser");
-const sequelize = require("sequelize");
+const sequelize = require("./src/database/sequelize");
 const morgan = require("morgan");
 
 // routes
@@ -21,7 +21,7 @@ app
   .use(bodyParser.json())
 
 // database
-// sequelize.initDb();
+sequelize.initDb();
 
 // start the server
 app.listen(app.get("port"), () => {
