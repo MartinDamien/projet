@@ -6,7 +6,7 @@ const sequelize = require("./src/database/sequelize");
 const morgan = require("morgan");
 
 // routes
-
+const user = require("./src/route/user");
 
 // initialize app
 dotenv.config();
